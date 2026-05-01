@@ -1,0 +1,56 @@
+[2026-05-01 00:16:49] Process monitoring stopped
+[2026-05-01 00:16:58] Process monitoring started
+[2026-05-01 00:45:01] Process monitoring started
+[2026-05-01 00:45:02] ========== SUSPICIOUS SYSTEM EVENT DETECTED ==========
+[2026-05-01 00:45:02] Reason: High total memory usage detected: 82.7%
+[2026-05-01 00:45:02] ======================================================
+[2026-05-01 00:45:02] Access denied while checking process PID: 0
+[2026-05-01 00:45:02] ========== SUSPICIOUS PROCESS DETECTED ==========
+[2026-05-01 00:45:02] PID: 4432
+[2026-05-01 00:45:02] Process Name: cmd.exe
+[2026-05-01 00:45:02] Executable Path: C:\Windows\System32\cmd.exe
+[2026-05-01 00:45:02] Reason: Suspicious process name detected: cmd.exe
+[2026-05-01 00:45:02] =================================================
+[2026-05-01 00:45:02] ========== SUSPICIOUS PROCESS DETECTED ==========
+[2026-05-01 00:45:02] PID: 7084
+[2026-05-01 00:45:02] Process Name: cmd.exe
+[2026-05-01 00:45:02] Executable Path: C:\Windows\System32\cmd.exe
+[2026-05-01 00:45:02] Reason: Suspicious process name detected: cmd.exe
+[2026-05-01 00:45:02] =================================================
+[2026-05-01 00:45:02] ========== SUSPICIOUS PROCESS DETECTED ==========
+[2026-05-01 00:45:02] PID: 21352
+[2026-05-01 00:45:02] Process Name: powershell.exe
+[2026-05-01 00:45:02] Executable Path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+[2026-05-01 00:45:02] Reason: Suspicious process name detected: powershell.exe
+[2026-05-01 00:45:02] =================================================
+[2026-05-01 00:45:02] ========== SUSPICIOUS PROCESS DETECTED ==========
+[2026-05-01 00:45:02] PID: 24844
+[2026-05-01 00:45:02] Process Name: powershell.exe
+[2026-05-01 00:45:02] Executable Path: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+[2026-05-01 00:45:02] Reason: Suspicious process name detected: powershell.exe
+[2026-05-01 00:45:02] =================================================
+[2026-05-01 00:45:06] ========== SUSPICIOUS SYSTEM EVENT DETECTED ==========
+[2026-05-01 00:45:06] Reason: High total memory usage detected: 82.8%
+[2026-05-01 00:45:06] ======================================================
+[2026-05-01 00:45:06] Access denied while checking process PID: 0
+[2026-05-01 00:45:10] Access denied while checking process PID: 0
+[2026-05-01 00:45:14] Access denied while checking process PID: 0
+[2026-05-01 00:45:18] ========== SUSPICIOUS SYSTEM EVENT DETECTED ==========
+[2026-05-01 00:45:18] Reason: High total memory usage detected: 83.3%
+[2026-05-01 00:45:18] ======================================================
+[2026-05-01 00:45:18] Access denied while checking process PID: 0
+[2026-05-01 00:45:22] ========== SUSPICIOUS SYSTEM EVENT DETECTED ==========
+[2026-05-01 00:45:22] Reason: High total memory usage detected: 83.2%
+[2026-05-01 00:45:22] ======================================================
+[2026-05-01 00:45:22] Access denied while checking process PID: 0
+[2026-05-01 00:45:26] ========== SUSPICIOUS SYSTEM EVENT DETECTED ==========
+[2026-05-01 00:45:26] Reason: High total memory usage detected: 82.9%
+[2026-05-01 00:45:26] ======================================================
+[2026-05-01 00:45:26] Access denied while checking process PID: 0
+[2026-05-01 00:45:30] Access denied while checking process PID: 0
+[2026-05-01 00:45:34] Access denied while checking process PID: 0
+[2026-05-01 00:45:38] Access denied while checking process PID: 0
+[2026-05-01 00:45:42] Access denied while checking process PID: 0
+[2026-05-01 00:45:46] Access denied while checking process PID: 0
+[2026-05-01 00:45:50] Access denied while checking process PID: 0
+[2026-05-01 00:45:52] Process monitoring stopped
