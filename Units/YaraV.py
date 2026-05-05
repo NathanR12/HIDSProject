@@ -1,8 +1,8 @@
-import os  ## Allows file path checks
-import yara  ## Allows YARA rule scanning
+import os  
+import yara  
 
 
-RULE_FILE = "HIDS_Rules.yar"  ## YARA rules file
+RULE_FILE = "HIDS_Rules.yar"  
 
 
 def Check_File_Yara(src_path):
@@ -21,8 +21,8 @@ def Check_File_Yara(src_path):
         return results
 
     try:
-        rules = yara.compile(filepath=RULE_FILE)  ## Loads the YARA rules file
-        matches = rules.match(src_path)           ## Scans the suspicious file
+        rules = yara.compile(filepath=RULE_FILE)  
+        matches = rules.match(src_path)           
 
         if matches:
             results.append("========== YARA MATCH DETECTED ==========")

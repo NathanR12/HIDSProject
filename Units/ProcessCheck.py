@@ -1,28 +1,34 @@
 import time # allows creation of loops and timestamps
 import psutil # is used to monitor processes such as usage and file logging.
 import YaraV
-import PandasLog
+import SQLite3LOG
+import Config
+
+CONFIG = Config.Load_Config()
 
 class ProcessCheck:                             ##creating class
-    Log_File = "Process_Log.txt"                ## creates log file
+    Log_File = CONFIG["logs"]["process_log"]
 
-    CHECK_INTERVAL = 3 ##seconds                ## how long the wait is between each cycle. (3 seconds here plus one later)
+    CHECK_INTERVAL = CONFIG["process"]["check_interval_seconds"]
 
-    CPU_Percent_Limit = 80.0                    ##cpu percentage limit  
-    Memory_Percent_Limit = 80.0                 ##Memory percentage limit
+    CPU_Percent_Limit = CONFIG["process"]["cpu_percent_limit"]
+    Memory_Percent_Limit = CONFIG["process"]["memory_percent_limit"]
 
-    Suspicious_Process_Names = {"powershell.exe","cmd.exe", "wscript.exe", "cscript.exe", "mshta.exe", "rundll32.exe", "regsvr32.exe", "certutil.exe", "bitsadmin.exe", "schtasks.exe"}   ##Processes ruled as suspicious to the program
+    Suspicious_Process_Names = {
+        name.lower()
+        for name in CONFIG["process"]["suspicious_process_names"]
+    }
 
-    Suspicious_Paths = {r"\Appdata\Roaming", r"\Appdata\Local\Temp", r"\Downloads", r"\PerfLogs", r"\Users\Public", r"\Windows\Tasks", r"\Windows\security", r"\Windows\debug",
-                         r"\Windows\Temp", r"\Windows\Logs", r"\Windows\ShellExperiences"}                  ##stores paths set as suspicious for the ids
+    Suspicious_Paths = {
+        path.lower()
+        for path in CONFIG["process"]["suspicious_paths"]
+    }
 
     def __init__(self):
             self.seen_processes = set()                     #stores process ids that have been seen
             self.logged_findings = {}                       #stores already logged alerts
-            self.Recheck_Time = 5 * 60   #5 mins            # recheck time 5 mins
-            self.Suspicious_Paths = {
-                path.lower() for path in self.Suspicious_Paths                  ##converts all suspicious paths to lowervase
-            }
+            self.Recheck_Time = CONFIG["process"]["recheck_time_seconds"]
+            
 
     def Log_To_File(self, message):                                     ## writes a messgae to the log file
         timestamp = time.strftime("%Y-%m-%d %H:%M:%S")                          #timestamp for logged events
@@ -39,7 +45,7 @@ class ProcessCheck:                             ##creating class
         for reason in reasons:                                          ##looped to seperate the possibility of multipul reasons
             self.Log_To_File("Reason: " + reason)                       ##list of flagged reasons
 
-        PandasLog.Log_Alert(
+        SQLite3LOG.Log_Alert(
             alert_type="Suspicious Process",
             source="ProcessCheck",
             pid=pid,

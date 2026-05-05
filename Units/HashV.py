@@ -1,7 +1,11 @@
 import os
 import hashlib
+import Config
 
-Hash_Storage = "HIDS_Hash.txt"
+CONFIG = Config.Load_Config()
+
+Hash_Storage = CONFIG["logs"]["hash_storage"]
+
 
 def Get_File_Hash(src_path):                         ##function to grab a specific hash when function called, path taken from watchdog.
     try:                                                #may fail so try is used.
@@ -40,7 +44,7 @@ def Check_File_Hash(src_path):                                                  
     current_hash = Get_File_Hash(src_path)                                          #gets the hash of the file right now
 
     if current_hash is None:
-        results.append("Could not hash file: " + src_path)                             #if there is not has for the suspicious file this message is returened to results
+        results.append("Could not hash file: " + src_path)                             #if there is not hahs for the suspicious file this message is returened to results
         return results
 
     hashes = Load_Hashes()                                              #gets the old hash for the path                                 
